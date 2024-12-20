@@ -26,16 +26,16 @@ public class RoleDTO {
 	private String role_name;
 	
 	// One-to-many relationship: A role can have multiple permissions
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private Set<PermissionDTO> permissions;
-    
-    public Set<PermissionDTO> getPermissions() {
-        return permissions;
-    }
-
-    public void setPermissions(Set<PermissionDTO> permissions) {
-        this.permissions = permissions;
-    }
+//    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
+//    @JsonManagedReference
+//    private Set<PermissionDTO> permissions;
+//    
+//    public Set<PermissionDTO> getPermissions() {
+//        return permissions;
+//    }
+//
+//    public void setPermissions(Set<PermissionDTO> permissions) {
+//        this.permissions = permissions;
+//    }
 	
 }

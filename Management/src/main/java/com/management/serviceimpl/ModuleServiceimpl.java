@@ -54,7 +54,7 @@ public class ModuleServiceimpl implements ModuleServInterface{
 	@Override
 	public ModuleDTO updateModulebyId(int module_id, ModuleDTO module) {
 		Optional<ModuleDTO> moduleData = moduleRepo.findById(module_id);
-		System.out.println(module.getConfig1() +" hfkjshfkjsa "+module.getConfig1().getClass());
+//		System.out.println(module.getConfig1() +" hfkjshfkjsa "+module.getConfig1().getClass());
 		ModuleDTO newData=null;
 	    if (moduleData.isPresent()) {
 	    	 newData=moduleData.get();

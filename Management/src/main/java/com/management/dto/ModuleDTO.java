@@ -1,9 +1,5 @@
 package com.management.dto;
 
-import java.util.Map;
-
-import org.json.JSONObject;
-
 import jakarta.persistence.*;
 
 @Entity

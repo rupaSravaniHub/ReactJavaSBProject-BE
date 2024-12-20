@@ -34,6 +34,7 @@ public class ModuleController {
 		return moduleInterface.getAllModules(page, limit);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/getModulebyId")
 	public  Optional<ModuleDTO> getModulebyId(@RequestParam int module_id)
 	{
@@ -44,6 +45,7 @@ public class ModuleController {
 	@PutMapping("/updateModulebyId")
 	public  ModuleDTO updateModulebyId(@RequestParam int module_id,@RequestBody ModuleDTO module)
 	{
+		System.out.println("updating");
 		return moduleInterface.updateModulebyId(module_id,module);
 	} 
 	
