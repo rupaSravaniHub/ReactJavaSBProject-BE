@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 import com.management.Repositories.ModuleRepo;
 import com.management.dto.ModuleDTO;
 import com.management.service.ModuleServInterface;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 @Service
 public class ModuleServiceimpl implements ModuleServInterface{
 	
@@ -22,17 +25,25 @@ public class ModuleServiceimpl implements ModuleServInterface{
 		
 	}
 
+//	@Override
+//	public List<ModuleDTO> getAllModules(int page, int limit) {
+//		List<ModuleDTO> LimitWise= new ArrayList<ModuleDTO>();
+//		List<ModuleDTO> allModules= moduleRepo.findAll();
+//		for (int i = 0; i < limit; i++) {
+//			 ModuleDTO module = allModules.get(i);
+//			 LimitWise.add(module);
+//		}
+//		System.out.println(LimitWise);
+//		return LimitWise;
+//	}
 	@Override
 	public List<ModuleDTO> getAllModules(int page, int limit) {
-		List<ModuleDTO> LimitWise= new ArrayList<ModuleDTO>();
-		List<ModuleDTO> allModules= moduleRepo.findAll();
-		for (int i = 0; i < limit; i++) {
-			 ModuleDTO module = allModules.get(i);
-			 LimitWise.add(module);
-		}
-		System.out.println(LimitWise);
-		return LimitWise;
+	    Pageable pageable = PageRequest.of(page - 1, limit);
+	    Page<ModuleDTO> modulePage = moduleRepo.findAll(pageable);
+	    System.out.println(modulePage.getContent());
+	    return modulePage.getContent();
 	}
+
 
 	@Override
 	public Optional<ModuleDTO> getModulebyId(int module_id) {

@@ -29,7 +29,8 @@ public class ModuleController {
 	
 	@CrossOrigin
 	@GetMapping("/getAllModules")
-	public List<ModuleDTO> getAllModules(@RequestParam int page, @RequestParam int limit)
+	public List<ModuleDTO> getAllModules(@RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "10") int limit)
 	{
 		return moduleInterface.getAllModules(page, limit);
 	}
@@ -55,6 +56,5 @@ public class ModuleController {
 	{
 		return moduleInterface.delById(module_id);
 	}
-	
-	
+
 }
