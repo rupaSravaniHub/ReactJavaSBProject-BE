@@ -42,7 +42,8 @@ public class RoleController {
 //    }
 	@CrossOrigin
 	@GetMapping("/getRoles")
-	public List<RoleDTO> getAllRoles(@RequestParam int page, @RequestParam int limit)
+	public List<RoleDTO> getAllRoles(@RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "10") int limit)
 	{
 		return roleServInterface.getAllRoles(page, limit);
 	}

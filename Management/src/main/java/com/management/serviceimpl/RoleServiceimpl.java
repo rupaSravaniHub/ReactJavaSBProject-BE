@@ -6,6 +6,9 @@ import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.management.Repositories.RoleRepo;
@@ -25,14 +28,18 @@ public class RoleServiceimpl implements RoleServInterface{
 	}
 	@Override
 	public List<RoleDTO> getAllRoles(int page, int limit) {
-		List<RoleDTO> LimitWise= new ArrayList<RoleDTO>();
-		List<RoleDTO> allRoles= rRepo.findAll();
-		for (int i = 0; i < limit; i++) {
-			RoleDTO role = allRoles.get(i);
-			 LimitWise.add(role);
-		}
-		System.out.println(LimitWise);
-		return LimitWise;
+//		List<RoleDTO> LimitWise= new ArrayList<RoleDTO>();
+//		List<RoleDTO> allRoles= rRepo.findAll();
+//		for (int i = 0; i < limit; i++) {
+//			RoleDTO role = allRoles.get(i);
+//			 LimitWise.add(role);
+//		}
+//		System.out.println(LimitWise);
+//		return LimitWise;
+		 Pageable pageable = PageRequest.of(page - 1, limit);
+		    Page<RoleDTO> rolesPage = rRepo.findAll(pageable);
+		    System.out.println(rolesPage.getContent());
+		    return rolesPage.getContent();
 	}
 //	@Override
 //	public String assignPermissionsToRole(int roleId, Set<PermissionDTO> permissions) {
