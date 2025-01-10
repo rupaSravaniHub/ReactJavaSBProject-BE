@@ -11,4 +11,5 @@ public interface ModuleServInterface {
 	public Optional<ModuleDTO> getModulebyId(int module_id);
 	public String delById(int module_id);
 	public ModuleDTO updateModulebyId(int module_id, ModuleDTO module);
+	public List<String> getModules() ;
 }

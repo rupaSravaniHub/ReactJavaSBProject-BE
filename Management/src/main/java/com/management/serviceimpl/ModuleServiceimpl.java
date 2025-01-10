@@ -75,7 +75,18 @@ public class ModuleServiceimpl implements ModuleServInterface{
 			newData.setConfig1(module.getConfig1().toString());
 	    }
 		return  moduleRepo.save(newData);
-		}}
+		}
+
+	@Override
+	public List<String> getModules() {
+		List<ModuleDTO> getModules= moduleRepo.findAll();
+		List<String> moduleNames= new ArrayList<>();
+		
+		 for (ModuleDTO module : getModules) {
+		        moduleNames.add(module.getModule_name()); 
+		    }
+		return moduleNames;
+	}}
 
 
 

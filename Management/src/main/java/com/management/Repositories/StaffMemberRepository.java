@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.management.dto.StaffMember;
 
 @Repository
-public interface StaffMemberRepository extends JpaRepository<StaffMember, Long> {
+public interface StaffMemberRepository extends JpaRepository<StaffMember, Integer> {
 }
 

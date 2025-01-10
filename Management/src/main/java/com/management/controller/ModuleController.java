@@ -36,6 +36,12 @@ public class ModuleController {
 	}
 	
 	@CrossOrigin
+	@GetMapping("/getModules")
+	public List<String> getModules() 
+	{
+		return moduleInterface.getModules();
+	}
+	@CrossOrigin
 	@GetMapping("/getModulebyId")
 	public  Optional<ModuleDTO> getModulebyId(@RequestParam int module_id)
 	{

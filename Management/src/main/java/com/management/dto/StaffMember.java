@@ -6,11 +6,12 @@ import jakarta.persistence.*;
 public class StaffMember {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    public Long getId() {
+    private int id;
+   
+    public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getFirstName() {
@@ -73,10 +74,10 @@ public class StaffMember {
 	public void setJoinDate(String joinDate) {
 		this.joinDate = joinDate;
 	}
-	public Double getSalary() {
+	public int getSalary() {
 		return salary;
 	}
-	public void setSalary(Double salary) {
+	public void setSalary(int salary) {
 		this.salary = salary;
 	}
 	private String firstName;
@@ -85,10 +86,13 @@ public class StaffMember {
     private String phone;
     private String dob;
     private String gender;
+    @Column(length = 1500)
     private String address;
     private String position;
     private String department;
     private String joinDate;
-    private Double salary;
+    private String modules;
+    private String permissions;
+    private int salary;
 }
 
