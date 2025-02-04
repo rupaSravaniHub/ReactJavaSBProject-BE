@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.management.Repositories.PermissionsRepo;
 import com.management.dto.PermissionDTO;
 import com.management.service.PermissionServInterface;
 
 @RestController
 public class PermissionController {
-
 	@Autowired PermissionServInterface permissionServimpl;
 	@PostMapping("/addPermission")
 	public PermissionDTO addPermission(@RequestBody PermissionDTO permissions)
@@ -27,5 +27,11 @@ public class PermissionController {
 	{
 		return permissionServimpl.getPermissions();
 		
+	}
+	
+	@GetMapping("/contact")
+	public String getContactDetails()
+	{
+		return "8688766083";
 	}
 }
