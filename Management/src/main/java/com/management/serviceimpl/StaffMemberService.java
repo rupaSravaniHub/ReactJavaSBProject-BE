@@ -22,7 +22,10 @@ public class StaffMemberService implements StaffServInterface{
 	@Override
 	  public StaffMember saveStaffMember(StaffMember staffMember)
 	  {
-		return staffMemberRepository.save(staffMember);
+		
+		StaffMember memDetails= staffMemberRepository.save(staffMember);
+		System.out.println("new staff member details"+memDetails);
+		return memDetails;
 		  
 	  }
 

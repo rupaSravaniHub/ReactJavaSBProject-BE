@@ -92,7 +92,14 @@ public class StaffMember {
     private String department;
     private String joinDate;
     private String modules;
-    private String permissions;
+    @Override
+	public String toString() {
+		return "StaffMember [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", phone=" + phone + ", dob=" + dob + ", gender=" + gender + ", address=" + address + ", position="
+				+ position + ", department=" + department + ", joinDate=" + joinDate + ", modules=" + modules
+				+ ", permissions=" + permissions + ", salary=" + salary + "]";
+	}
+	private String permissions;
     private int salary;
 }
 

@@ -36,17 +36,17 @@ public class PermissionDTO {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	 // Many-to-one relationship: Each permission belongs to one role
-    @ManyToOne
-    @JoinColumn(name = "role_id")  // Foreign key to RoleDTO
-    @JsonBackReference
-    private RoleDTO role;
-    
-    public RoleDTO getRole() {
-        return role;
-    }
-
-    public void setRole(RoleDTO role) {
-        this.role = role;
-    }
+//	 // Many-to-one relationship: Each permission belongs to one role
+//    @ManyToOne
+//    @JoinColumn(name = "role_id")  // Foreign key to RoleDTO
+//    @JsonBackReference
+//    private RoleDTO role;
+//    
+//    public RoleDTO getRole() {
+//        return role;
+//    }
+//
+//    public void setRole(RoleDTO role) {
+//        this.role = role;
+//    }
 }
